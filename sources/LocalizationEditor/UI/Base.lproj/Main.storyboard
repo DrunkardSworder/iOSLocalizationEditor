@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -82,11 +81,8 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="open_folder_with"/>
                                             </userDefinedRuntimeAttributes>
                                         </menuItem>
-                                        <menuItem title="Reload table" keyEquivalent="r" id="FXy-oH-qqv">
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="reload_folder"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </menuItem>
+                                        <menuItem title="Reload table" keyEquivalent="r" id="FXy-oH-qqv"/>
+                                        <menuItem title="Export excel" keyEquivalent="r" id="Btd-Lt-Adl" userLabel="Export excel"/>
                                         <menuItem isSeparatorItem="YES" id="LVj-0e-nvV"/>
                                         <menuItem title="Close" keyEquivalent="w" id="v5v-W3-iIa">
                                             <userDefinedRuntimeAttributes>
@@ -223,6 +219,7 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="LocalizationEditor" customModuleProvider="target">
                     <connections>
+                        <outlet property="exportMenuItem" destination="Btd-Lt-Adl" id="kYt-zz-eVP"/>
                         <outlet property="openFolderMenuItem" destination="pXV-BH-hD6" id="9EJ-PN-yBL"/>
                         <outlet property="reloadMenuItem" destination="FXy-oH-qqv" id="SNs-QM-g6w"/>
                     </connections>
@@ -277,7 +274,7 @@
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="60" height="22"/>
                                     <size key="maxSize" width="96" height="22"/>
-                                    <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" id="44R-ph-qlU">
+                                    <searchField key="view" wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" textCompletion="NO" id="44R-ph-qlU">
                                         <rect key="frame" x="0.0" y="14" width="96" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="uO5-oO-Ep3">
@@ -293,7 +290,7 @@
                                 <toolbarItem implicitItemIdentifier="8AA5A4E1-359F-4E3E-8BBA-D3AAAF529BE0" label="New translation" paletteLabel="New translation" image="NSAddTemplate" sizingBehavior="auto" id="1Cc-Nn-JQX">
                                     <nil key="toolTip"/>
                                     <imageView key="view" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="LUP-5J-Wfe">
-                                        <rect key="frame" x="37" y="14.5" width="14.5" height="13"/>
+                                        <rect key="frame" x="35" y="14" width="18.5" height="17"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers>
                                             <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="p2g-ox-RGE">
@@ -424,7 +421,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="120"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EEY-nE-SYX">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EEY-nE-SYX">
                                 <rect key="frame" x="6" y="94" width="30" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Key:" id="xVP-DG-dEy">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -435,7 +432,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cS5-ws-aed">
+                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cS5-ws-aed">
                                 <rect key="frame" x="76" y="91" width="366" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="jrp-La-RWv">
                                     <font key="font" metaFont="system"/>
@@ -445,9 +442,6 @@
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cs7-7R-8O8">
                                 <rect key="frame" x="335" y="1" width="114" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="EuN-4A-HE8"/>
-                                </constraints>
                                 <buttonCell key="cell" type="push" title="Add" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ouS-ec-KwS">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -455,15 +449,15 @@
                                         <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="add"/>
                                     </userDefinedRuntimeAttributes>
                                 </buttonCell>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="EuN-4A-HE8"/>
+                                </constraints>
                                 <connections>
                                     <action selector="addAction:" target="ers-OE-kPR" id="IPp-gb-iVm"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gxf-vL-lUd">
                                 <rect key="frame" x="1" y="1" width="114" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="kFb-vL-odm"/>
-                                </constraints>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="q2m-Rj-ypE">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -474,11 +468,14 @@ Gw
                                         <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="cancel"/>
                                     </userDefinedRuntimeAttributes>
                                 </buttonCell>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="kFb-vL-odm"/>
+                                </constraints>
                                 <connections>
                                     <action selector="cancelAction:" target="ers-OE-kPR" id="m9p-5d-qYt"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2x2-5P-xq8">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2x2-5P-xq8">
                                 <rect key="frame" x="6" y="65" width="67" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Comment:" id="grt-rx-XjJ">
                                     <font key="font" metaFont="system"/>
@@ -489,7 +486,7 @@ Gw
                                     </userDefinedRuntimeAttributes>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FcG-n5-36y">
+                            <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FcG-n5-36y">
                                 <rect key="frame" x="76" y="62" width="366" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="VG9-3U-EQX">
                                     <font key="font" metaFont="system"/>

@@ -52,6 +52,8 @@ protocol WindowControllerToolbarDelegate: AnyObject {
      Invoked when user requests reload selected folder
      */
     func userDidRequestReloadData()
+    
+    func userDidExportExcel()
 }
 
 final class WindowController: NSWindowController {
@@ -116,6 +118,7 @@ final class WindowController: NSWindowController {
         let appDelegate = NSApplication.shared.delegate as! AppDelegate
         appDelegate.openFolderMenuItem.action = #selector(WindowController.openFolderAction(_:))
         appDelegate.reloadMenuItem.action = #selector(WindowController.reloadDataAction(_:))
+        appDelegate.exportMenuItem.action = #selector(WindowController.exprotExcelAction(_:))
     }
 
     private func enableControls() {
@@ -170,6 +173,10 @@ final class WindowController: NSWindowController {
 
     @objc private func reloadDataAction(_ sender: NSMenuItem) {
         delegate?.userDidRequestReloadData()
+    }
+    
+    @objc private func exprotExcelAction(_ sender: NSMenuItem) {
+        delegate?.userDidExportExcel()
     }
 }
 

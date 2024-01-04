@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import CSV
+import FileKit
 
 /**
 Protocol for announcing changes to the toolbar. Needed because the VC does not have direct access to the toolbar (handled by WindowController)
@@ -156,6 +158,52 @@ final class ViewController: NSViewController {
                 return
             }
             self.handleOpenFolder(url)
+        }
+    }
+    
+    private func previewCSV() {
+        let csvPath = NSTemporaryDirectory() + "Localization.csv"
+        debugPrint("Save path: \(csvPath)")
+        let stream = OutputStream(toFileAtPath: csvPath, append: false)!
+
+        do {
+            try Path(csvPath).createFile()
+
+            let csv = try CSVWriter(stream: stream)
+            
+            var columns = tableView.tableColumns
+            columns.removeLast()
+            
+            let rowHeader = columns.map { s -> String in
+                return s.identifier.rawValue
+            }
+            
+            try csv.write(row: rowHeader)
+            let count = dataSource.numberOfRows(in: tableView)
+            debugPrint("国际化文字个数：\(count)")
+            
+            for index in 0..<count {
+                var rows = [String]()
+                for header in rowHeader {
+                    if header == "key" {
+                        if let row = dataSource.getKey(row: index) {
+                            rows.append(row)
+                        }
+                    }
+                    else {
+                        let row = dataSource.getLocalization(language: header, row: index).value
+                        rows.append(row)
+                    }
+                }
+                
+                try csv.write(row: rows, quotedAtIndex: { _ in
+                    return true
+                })
+            }
+            csv.stream.close()
+            
+        } catch {
+            debugPrint(error.localizedDescription)
         }
     }
 }
@@ -328,6 +376,10 @@ extension ViewController: WindowControllerToolbarDelegate {
         }
         handleOpenFolder(currentOpenFolderUrl)
 
+    }
+    
+    func userDidExportExcel() {
+        previewCSV()
     }
 }
 

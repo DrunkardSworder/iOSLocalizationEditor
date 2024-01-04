@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		172274D420D933970036EA4E /* LocalizationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172274D320D933970036EA4E /* LocalizationGroup.swift */; };
+		6DC8613FDB927036B3570948 /* Pods_LocalizationEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DDDE268C809F216F74EE63 /* Pods_LocalizationEditor.framework */; };
 		A117B6AD21D0FFC6008F10E4 /* LocalizableStrings-en-with-complete-messages.strings in Resources */ = {isa = PBXBuildFile; fileRef = A117B6AC21D0FFC0008F10E4 /* LocalizableStrings-en-with-complete-messages.strings */; };
 		A117B6AF21D10060008F10E4 /* LocalizableStrings-en-with-incomplete-messages.strings in Resources */ = {isa = PBXBuildFile; fileRef = A117B6AE21D10060008F10E4 /* LocalizableStrings-en-with-incomplete-messages.strings */; };
 		A15A5A4221D908C400D3C791 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15A5A4121D908C400D3C791 /* Parser.swift */; };
@@ -83,12 +84,15 @@
 
 /* Begin PBXFileReference section */
 		172274D320D933970036EA4E /* LocalizationGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationGroup.swift; sourceTree = "<group>"; };
+		44ED91B8E8F078927D946936 /* Pods-LocalizationEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalizationEditor.debug.xcconfig"; path = "Target Support Files/Pods-LocalizationEditor/Pods-LocalizationEditor.debug.xcconfig"; sourceTree = "<group>"; };
 		526D844525529105008BCD4B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A117B6AC21D0FFC0008F10E4 /* LocalizableStrings-en-with-complete-messages.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = "LocalizableStrings-en-with-complete-messages.strings"; sourceTree = "<group>"; };
 		A117B6AE21D10060008F10E4 /* LocalizableStrings-en-with-incomplete-messages.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = "LocalizableStrings-en-with-incomplete-messages.strings"; sourceTree = "<group>"; };
 		A15A5A4121D908C400D3C791 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		A15A5A4521D90AC600D3C791 /* ParserIsolationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserIsolationTests.swift; sourceTree = "<group>"; };
 		A15A5A4821DA249400D3C791 /* ParserTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTypes.swift; sourceTree = "<group>"; };
+		A5DDDE268C809F216F74EE63 /* Pods_LocalizationEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalizationEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A682D0DBD7E7D1122A50C83D /* Pods-LocalizationEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalizationEditor.release.xcconfig"; path = "Target Support Files/Pods-LocalizationEditor/Pods-LocalizationEditor.release.xcconfig"; sourceTree = "<group>"; };
 		D644DC13283A3CB00031D188 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E0A395E526088744000189F7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E9CD53DA255B27AD0054EF79 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DC8613FDB927036B3570948 /* Pods_LocalizationEditor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +160,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B2440F508DCBCD1617D4DFE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44ED91B8E8F078927D946936 /* Pods-LocalizationEditor.debug.xcconfig */,
+				A682D0DBD7E7D1122A50C83D /* Pods-LocalizationEditor.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F3AD2CDF2361A8CF00558765 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +184,7 @@
 				F3DF02CC21C65F6800CEC6B6 /* LocalizationEditorTests */,
 				F3D9C94320BEC7460081830A /* Products */,
 				F3D9C96F20BEF0730081830A /* Frameworks */,
+				B2440F508DCBCD1617D4DFE7 /* Pods */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -252,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				F3D9C97020BEF0740081830A /* Files.framework */,
+				A5DDDE268C809F216F74EE63 /* Pods_LocalizationEditor.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -312,6 +328,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3D9C95220BEC7460081830A /* Build configuration list for PBXNativeTarget "LocalizationEditor" */;
 			buildPhases = (
+				CC777A817465E234F43950F0 /* [CP] Check Pods Manifest.lock */,
 				F3EF22082209F25F000E8C80 /* Build number */,
 				F3BC11A421C40FAC001F396F /* SwiftLint */,
 				F3D9C93E20BEC7460081830A /* Sources */,
@@ -319,6 +336,7 @@
 				F3D9C94020BEC7460081830A /* Resources */,
 				F3D9C97520BEF0A50081830A /* Embed Frameworks */,
 				F3EA77C421AEB45000337B3B /* CopyFiles */,
+				3E0FA7DCE418AA010C369F1C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -430,6 +448,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3E0FA7DCE418AA010C369F1C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LocalizationEditor/Pods-LocalizationEditor-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
+				"${BUILT_PRODUCTS_DIR}/FileKit/FileKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FileKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LocalizationEditor/Pods-LocalizationEditor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC777A817465E234F43950F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LocalizationEditor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F3BC11A421C40FAC001F396F /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -602,7 +662,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -660,7 +720,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -670,6 +730,7 @@
 		};
 		F3D9C95320BEC7460081830A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44ED91B8E8F078927D946936 /* Pods-LocalizationEditor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LocalizationEditor/LocalizationEditor.entitlements;
@@ -695,6 +756,7 @@
 		};
 		F3D9C95420BEC7460081830A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A682D0DBD7E7D1122A50C83D /* Pods-LocalizationEditor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LocalizationEditor/LocalizationEditor.entitlements;
